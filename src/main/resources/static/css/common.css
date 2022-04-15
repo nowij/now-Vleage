@@ -26,12 +26,12 @@ body {
 	user-select:none;
 }
 
-#h_content {
+.h_content {
 	position:relative;
 	top:50%;
 	transform:translateY(-50%);
 }
 
-#b_content {
+.b_content {
 	position:relative;
 }

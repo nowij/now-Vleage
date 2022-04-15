@@ -18,11 +18,11 @@
 
 <body>
 	<header></header>
-	<div id="b_content" style="padding:10px">
+	<div class="b_content" style="padding:10px">
 		<button id="graphBtn" class="easyui-linkbutton" style="width:5%;">±×·¡ÇÁ</button>
 	</div>
 	
-	<div id="b_content">
+	<div class="b_content">
 		<table id="grid" class="easyui-datagrid" style="width:665px"></table>
 	</div>
 	

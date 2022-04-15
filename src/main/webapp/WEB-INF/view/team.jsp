@@ -37,9 +37,9 @@
 
 <body>
 	<header>
-			<div id="h_content">${team}</div>
+			<div class="h_content">${team}</div>
 	</header>
-	<div id="b_content">
+	<div class="b_content">
 		<div id="ngDiv">next</div>
 		<div id="trDiv">
 			<div id="rank">current</div>
