@@ -1,6 +1,6 @@
 # 포트 설정
 server:
-  port: 8080
+  port: 7104
 
 spring:
   mvc:
