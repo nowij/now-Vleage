@@ -16,14 +16,23 @@
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
 
+<style>
+.right_content {
+	margin-left:45%;
+	padding:5px;
+}
+</style>
+
 <body>
 	<header></header>
-	<div class="b_content" style="padding:10px">
-		<button id="graphBtn" class="easyui-linkbutton" style="width:5%;">그래프</button>
-	</div>
-	
-	<div class="b_content">
-		<table id="grid" class="easyui-datagrid" style="width:665px"></table>
+	<div class="main_content">
+		<div class="table_header_content">
+			<button id="graphBtn" class="easyui-linkbutton">그래프</button>
+		</div>
+		
+		<div>
+			<table id="grid" class="easyui-datagrid" style="width:1105px"></table>
+		</div>
 	</div>
 	
 	<footer></footer>
@@ -59,7 +68,6 @@ function setGrid() {
 
 function movePage(row) {
 	const team = row.team;
-	console.log(team);
 	// 페이지 이동
 	let form = document.createElement('form');
     

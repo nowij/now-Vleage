@@ -17,46 +17,65 @@
 <script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
 
 <style>
-#b_content {
-	display:flex;
-	flex-direction:row;
-	padding:20px;
+.main_content {
+	flex-direction:row; /* 세로 방향으로 정렬 */
 }
 
-#ngDiv {
-	width:50%;
-	text-align:center;
-	padding:15%;
+#nxtGmDiv {
+	height:400px;
+	background:#fffff0;
 }
 
-#trDiv {
-	width:500px;
-	padding:5px;
+#tbleName {
+	margin-top:50px;
 }
+
+#rank {
+	height:80px;
+	background:#ffff95;
+}
+
 </style>
 
 <body>
 	<header>
-			<div class="h_content">${team}</div>
+			<div class="header_content">${team}</div>
 	</header>
-	<div class="b_content">
-		<div id="ngDiv">next</div>
-		<div id="trDiv">
-			<div id="rank">current</div>
-			<table id="trTable" class="easyui-datagrid">
-				<thead>
-			        <tr>
-			            <th data-options="field:'rank', width:60">Code</th>
-			            <th data-options="field:'team', width:60">Name</th>
-			            <th data-options="field:'win', width:60">Price</th>
-			        </tr>
-			    </thead>
-			</table>
+	<div class="main_content">
+		<div class="left_content">
+			<div id="nxtGmDiv">next</div>
 		</div>
+		
+		<div class="right_content">
+			<div id="rank">current</div>
+			<div id="tbleName" class="table_header_content">승점표</div>
+			<div>
+				<table id="trTble" class="easyui-datagrid"></table>
+			</div>
+		</div>
+		
 	</div>
 	<footer></footer>
 </body>
 
 <script type="text/javascript">
+$(document).ready(function(){
+	setTable();	
+});
+
+function setTable() {
+	$('#trTble').datagrid({
+		url:'',
+		columns[[
+			{field:'curntGm', title:'현재경기수', width:100},
+			{field:'nxtGm', title:'남은경기수', width:100},
+			{field:'curntScr', title:'현재승점', width:100},
+			{field:'nxtScr', title:'남은승점', width:100},
+			{field:'mxScr', title:'최대승점', width:100}
+		]],
+		fitColumns:true,
+		singleSelect:true
+	});
+}
 </script>
 </html>
