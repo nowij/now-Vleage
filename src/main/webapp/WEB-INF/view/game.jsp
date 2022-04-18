@@ -16,23 +16,46 @@
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
 
+<style>
+.main_content {
+	flex-direction:row;
+}
+
+#comboDiv {
+	padding:15px;
+}
+</style>
+
 <body>
-	<header></header>
-	<div class="b_content">
-		<input id="seasn" class="easyui-combobox"></input>
-		<input id="round" class="easyui-combobox"></input>
-	</div>
-	<div class="b_content">
-		<table id="rsltTble"></table>
+	<header>${team}</header>
+	<div class="main_content">
+		<div class="left_content">
+			<div id="comboDiv">
+				<input id="seasn" class="easyui-combobox"></input>
+				<input id="round" class="easyui-combobox"></input>
+			</div>
+			<div>
+				<table id="rsltTble" class="easyui-datagrid"></table>
+			</div>
+			<div>
+				<!-- 누적 몇승 몇패 -->
+			</div>
+		</div>
+		
+		<!-- 히든 하기 -->
+		<div class="right_content">
+			<div>vs</div>
+			<div>
+				<table id="dtlTble" class="easyui-datagrid"></table>
+			</div>
+		</div>
 	</div>
 	
-	<div>
-	
-	</div>
 	<footer></footer>
 </body>
 
 <script>
+
 $(document).ready(function(){
 	setSeasnCombobox();
 	setRoundCombobox();
@@ -58,13 +81,14 @@ function setResultTable() {
 	$('#rsltTble').datagrid({
 		url: '',
 		columns:[[
-			{field:'gmDate', title:'날짜'},
-			{field:'gm', title:'경기'},
-			{field:'gmRslt', title:'결과'}
+			{field:'gmDate', title:'날짜', width:100},
+			{field:'gm', title:'경기', width:100},
+			{field:'gmRslt', title:'결과', width:100}
 		]],
 		sortName: 'gmDate',
 		singleSelect: true,
 		autoLoad: false,
+		fitColumns: true,
 		emptyMsg: '데이터가 없습니다.',
 		onDblClickRow: function(index, row) {
 			doDetail(row);
@@ -74,6 +98,23 @@ function setResultTable() {
 
 function doDetail(row) {
 	
+}
+
+function setDetailTable() {
+	$('#dtlTble').datagrid({
+		url: '',
+		columns:[[
+			{field: 'team', title:'팀', width:100},
+			{field: 'set', title:'세트', width:100},
+			{field: 'oSet', title:'1', width:100},
+			{field: 'tSet', title:'2', width:100},
+			{field: 'tSet', title:'3', width:100},
+			{field: 'fSet', title:'4', width:100},
+			{field: 'lSet', title:'5', width:100}
+		]],
+		fitColumns: true,
+		singleSelect: true
+	});
 }
 
 </script>

@@ -43,7 +43,7 @@
 	</header>
 	<div class="main_content">
 		<div class="left_content">
-			<div id="nxtGmDiv">next</div>
+			<div id="nxtGmDiv"><a onclick="movePage()">next</a></div>
 		</div>
 		
 		<div class="right_content">
@@ -76,6 +76,23 @@ function setTable() {
 		fitColumns:true,
 		singleSelect:true
 	});
+}
+
+function movePage() {
+	const team = '${team}';
+	let form = document.createElement('form');
+	let object;
+
+	object = document.createElement('input');
+	object.setAttribute('type', 'hidden');
+    object.setAttribute('name', 'team');
+    object.setAttribute('value', team);
+    
+    form.appendChild(object);
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', '/game.do');
+    document.body.appendChild(form);
+    form.submit();
 }
 </script>
 </html>

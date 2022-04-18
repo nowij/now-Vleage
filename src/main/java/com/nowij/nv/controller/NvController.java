@@ -17,4 +17,10 @@ public class NvController {
 		model.addAttribute("team", team);
 		return "team";
 	}
+	
+	@RequestMapping("/game.do")
+	public String game(String team, Model model) {
+		model.addAttribute("team", team);
+		return "game";
+	}
 }
