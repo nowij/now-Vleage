@@ -27,7 +27,11 @@
 </style>
 
 <body>
-	<header>${team}</header>
+	<!-- header -->
+	<div class="header">
+		<div class="header_content">${team}</div>
+	</div>
+	<!-- container -->
 	<div class="main_content">
 		<div class="left_content">
 			<div id="comboDiv">
@@ -35,7 +39,7 @@
 				<input id="round" class="easyui-combobox"></input>
 			</div>
 			<div>
-				<table id="rsltTble" class="easyui-datagrid"></table>
+				<table id="rsltTble" class="easyui-datagrid" data-options="fitColumns:true"></table>
 			</div>
 			<div>
 				<!-- 누적 몇승 몇패 -->
@@ -50,12 +54,11 @@
 			</div>
 		</div>
 	</div>
-	
-	<footer></footer>
+	<!-- footer -->
+	<div class="footer"></div>
 </body>
 
 <script>
-
 $(document).ready(function(){
 	setSeasnCombobox();
 	setRoundCombobox();

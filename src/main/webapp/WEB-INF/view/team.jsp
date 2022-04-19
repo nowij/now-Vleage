@@ -38,9 +38,11 @@
 </style>
 
 <body>
-	<header>
-			<div class="header_content">${team}</div>
-	</header>
+	<!-- header -->
+	<div class="header">
+		<div class="header_content">${team}</div>
+	</div>
+	<!-- container -->
 	<div class="main_content">
 		<div class="left_content">
 			<div id="nxtGmDiv"><a onclick="movePage()">next</a></div>
@@ -55,7 +57,8 @@
 		</div>
 		
 	</div>
-	<footer></footer>
+	<!-- footer -->
+	<div class="footer"></div>
 </body>
 
 <script type="text/javascript">

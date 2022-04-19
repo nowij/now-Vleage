@@ -24,7 +24,9 @@
 </style>
 
 <body>
-	<header></header>
+	<!-- header -->
+	<div class="header"></div>
+	<!-- container -->
 	<div class="main_content">
 		<div class="table_header_content">
 			<button id="graphBtn" class="easyui-linkbutton">±×·¡ÇÁ</button>
@@ -34,8 +36,8 @@
 			<table id="grid" class="easyui-datagrid" style="width:1105px"></table>
 		</div>
 	</div>
-	
-	<footer></footer>
+	<!-- footer -->
+	<div class="footer"></div>
 </body>
 <script>
 $(document).ready(function(){
