@@ -7,3 +7,27 @@ spring:
     view:
       prefix: /WEB-INF/view/
       suffix: .jsp
+      
+# 색상표
+color:
+ - team: hd
+  mainColor: 50B748
+  subColor: 00287A
+ - team: ex
+  mainColor: 1f358b
+  subColor: 빨간색
+ - team: ibk
+  mainColor: 0099da
+  subColor: 주황색
+ - team: gs
+  mainColor: 00718F
+  subColor: BBBDC0
+ - team: hg
+  mainColor: ec008c
+  subColor: 351b6f
+ - team: kgc
+  mainColor:
+  subColor:
+ - team: pp
+  mainColor: df0024
+  subColor: 
