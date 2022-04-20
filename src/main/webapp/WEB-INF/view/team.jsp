@@ -68,16 +68,17 @@ $(document).ready(function(){
 
 function setTable() {
 	$('#trTble').datagrid({
-		url:'',
-		columns[[
+		url: 'team_test.json',
+		columns: [[
 			{field:'curntGm', title:'현재경기수', width:100},
 			{field:'nxtGm', title:'남은경기수', width:100},
 			{field:'curntScr', title:'현재승점', width:100},
 			{field:'nxtScr', title:'남은승점', width:100},
 			{field:'mxScr', title:'최대승점', width:100}
 		]],
-		fitColumns:true,
-		singleSelect:true
+		fitColumns: true,
+		singleSelect: true,
+		method: 'GET' // 임시(나중에 POST로 변경)
 	});
 }
 

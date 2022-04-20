@@ -49,8 +49,7 @@
 		</div>
 		
 		<div>
-			<table id="grid" class="easyui-datagrid" style="width:1105px">
-			</table>
+			<table id="grid" class="easyui-datagrid" style="width:1105px"></table>
 		</div>
 	</div>
 	<!-- footer -->
@@ -63,25 +62,27 @@ $(document).ready(function(){
 
 function setGrid() {
 	$('#grid').datagrid({
-		url: '',
+		url: 'main_test.json',
 		columns: [[
-			{field:'rank', title:'¼øÀ§'},
-			{field:'team', title:'ÆÀ'},
-			{field:'win', title:'½Â'},
-			{field:'lose', title:'ÆÐ'},
-			{field:'winScore', title:'½ÂÁ¡'},
-			{field:'gotSet', title:'µæ¼¼Æ®'},
-			{field:'lossSet', title:'½Ç¼¼Æ®'},
-			{field:'setPercent', title:'¼¼Æ®µæ½Ç·ü'},
-			{field:'gotScore', title:'µæÁ¡'},
-			{field:'lossScore', title:'½ÇÁ¡'},
-			{field:'scorePercent', title:'Á¡¼öµæ½Ç·ü'}
+			{field:'rank', title:'¼øÀ§', width:'100'},
+			{field:'team', title:'ÆÀ', width:'100'},
+			{field:'win', title:'½Â', width:'100'},
+			{field:'lose', title:'ÆÐ', width:'100'},
+			{field:'winScore', title:'½ÂÁ¡', width:'100'},
+			{field:'gotSet', title:'µæ¼¼Æ®', width:'100'},
+			{field:'lossSet', title:'½Ç¼¼Æ®', width:'100'},
+			{field:'setPercent', title:'¼¼Æ®µæ½Ç·ü', width:'100'},
+			{field:'gotScore', title:'µæÁ¡', width:'100'},
+			{field:'lossScore', title:'½ÇÁ¡', width:'100'},
+			{field:'scorePercent', title:'Á¡¼öµæ½Ç·ü', width:'100'}
 		]],
+		method: 'GET', // ÀÓ½Ã(³ªÁß¿¡ post·Î)
 		singleSelect: true,
 		sortName: 'rank',
 		onDblClickRow: function(index, row) {
 			movePage(row);
-		}
+		},
+		fitColumns: true
 	});
 }
 

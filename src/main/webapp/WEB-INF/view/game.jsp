@@ -39,7 +39,7 @@
 				<input id="round" class="easyui-combobox"></input>
 			</div>
 			<div>
-				<table id="rsltTble" class="easyui-datagrid" data-options="fitColumns:true"></table>
+				<table id="rsltTble" class="easyui-datagrid"></table>
 			</div>
 			<div>
 				<!-- 누적 몇승 몇패 -->
@@ -59,9 +59,11 @@
 </body>
 
 <script>
+
 $(document).ready(function(){
 	setSeasnCombobox();
 	setRoundCombobox();
+	setResultTable();
 });
 
 function setSeasnCombobox() {
@@ -82,8 +84,8 @@ function setRoundCombobox() {
 
 function setResultTable() {
 	$('#rsltTble').datagrid({
-		url: '',
-		columns:[[
+		url: 'game_test.json',
+		columns: [[
 			{field:'gmDate', title:'날짜', width:100},
 			{field:'gm', title:'경기', width:100},
 			{field:'gmRslt', title:'결과', width:100}
@@ -93,9 +95,10 @@ function setResultTable() {
 		autoLoad: false,
 		fitColumns: true,
 		emptyMsg: '데이터가 없습니다.',
-		onDblClickRow: function(index, row) {
+		method: 'GET' // 임시(나중에 POST로 변경)
+		/* onDblClickRow: function(index, row) {
 			doDetail(row);
-		}
+		} */
 	});
 }
 
