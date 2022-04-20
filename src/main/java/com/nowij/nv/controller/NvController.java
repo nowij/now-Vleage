@@ -23,4 +23,9 @@ public class NvController {
 		model.addAttribute("team", team);
 		return "game";
 	}
+	
+	@RequestMapping("/admin.do")
+	public String admin() {
+		return "admin";
+	}
 }

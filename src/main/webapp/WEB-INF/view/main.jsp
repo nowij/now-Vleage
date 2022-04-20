@@ -17,6 +17,20 @@
 <script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
 
 <style>
+.header_admin {
+	z-index: 999;
+    position: absolute;
+    top: 20px;
+    right: calc(50% - 600px);
+    padding: 0 12px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #0e76bc;
+    text-decoration: none;
+    background-color: #e3edf4;
+    border-radius: 20px;
+}
+
 .right_content {
 	margin-left:45%;
 	padding:5px;
@@ -25,7 +39,9 @@
 
 <body>
 	<!-- header -->
-	<div class="header"></div>
+	<div class="header">
+		<a href="/admin.do" class="header_admin">°ü¸®ÀÚ</a>
+	</div>
 	<!-- container -->
 	<div class="main_content">
 		<div class="table_header_content">
@@ -33,7 +49,8 @@
 		</div>
 		
 		<div>
-			<table id="grid" class="easyui-datagrid" style="width:1105px"></table>
+			<table id="grid" class="easyui-datagrid" style="width:1105px">
+			</table>
 		</div>
 	</div>
 	<!-- footer -->
