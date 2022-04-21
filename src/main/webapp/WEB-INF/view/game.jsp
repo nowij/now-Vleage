@@ -45,8 +45,7 @@
 				<!-- 누적 몇승 몇패 -->
 			</div>
 		</div>
-		
-		<!-- 히든 하기 -->
+		<!-- 상세 화면 -->
 		<div class="right_content">
 			<div>vs</div>
 			<div>
@@ -61,6 +60,7 @@
 <script>
 
 $(document).ready(function(){
+	$('.right_content').css('visibility','hidden');
 	setSeasnCombobox();
 	setRoundCombobox();
 	setResultTable();
@@ -95,31 +95,29 @@ function setResultTable() {
 		autoLoad: false,
 		fitColumns: true,
 		emptyMsg: '데이터가 없습니다.',
-		method: 'GET' // 임시(나중에 POST로 변경)
-		/* onDblClickRow: function(index, row) {
-			doDetail(row);
-		} */
+		method: 'GET', // 임시(나중에 POST로 변경)
+		onDblClickRow: function(index, row) {
+			setDetailTable(row);
+			$('.right_content').css('visibility','visible');
+		}
 	});
 }
 
-function doDetail(row) {
-	
-}
-
-function setDetailTable() {
+function setDetailTable(row) {
 	$('#dtlTble').datagrid({
-		url: '',
+		url: 'gameDetail_test.json',
 		columns:[[
 			{field: 'team', title:'팀', width:100},
 			{field: 'set', title:'세트', width:100},
 			{field: 'oSet', title:'1', width:100},
-			{field: 'tSet', title:'2', width:100},
+			{field: 'sSet', title:'2', width:100},
 			{field: 'tSet', title:'3', width:100},
 			{field: 'fSet', title:'4', width:100},
 			{field: 'lSet', title:'5', width:100}
 		]],
 		fitColumns: true,
-		singleSelect: true
+		singleSelect: true,
+		method: 'GET' // 임시(나중에 POST로 변경)
 	});
 }
 
