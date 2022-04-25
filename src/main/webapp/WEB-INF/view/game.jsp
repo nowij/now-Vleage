@@ -28,8 +28,8 @@
 
 <body>
 	<!-- header -->
-	<div class="header">
-		<div class="header_content">${team}</div>
+	<div class="header" style="background-color:#${vo.mainClr}">
+		<div class="header_content">${vo.team}</div>
 	</div>
 	<!-- container -->
 	<div class="main_content">
@@ -54,7 +54,7 @@
 		</div>
 	</div>
 	<!-- footer -->
-	<div class="footer"></div>
+	<div class="footer" style="background-color:#${vo.subClr}"></div>
 </body>
 
 <script>

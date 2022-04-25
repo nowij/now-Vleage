@@ -39,8 +39,8 @@
 
 <body>
 	<!-- header -->
-	<div class="header">
-		<div class="header_content">${team}</div>
+	<div class="header" style="background-color:#${vo.mainClr}">
+		<div class="header_content">${vo.team}</div>
 	</div>
 	<!-- container -->
 	<div class="main_content">
@@ -58,10 +58,11 @@
 		
 	</div>
 	<!-- footer -->
-	<div class="footer"></div>
+	<div class="footer" style="background-color:#${vo.subClr}"></div>
 </body>
 
 <script type="text/javascript">
+
 $(document).ready(function(){
 	setTable();	
 });
@@ -83,7 +84,8 @@ function setTable() {
 }
 
 function movePage() {
-	const team = '${team}';
+	const team = '${vo.team}';
+	
 	let form = document.createElement('form');
 	let object;
 

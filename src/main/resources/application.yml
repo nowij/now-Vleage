@@ -2,36 +2,50 @@
 server:
   port: 7104
 
+# spring 설정
 spring:
   mvc:
     view:
       prefix: /WEB-INF/view/
       suffix: .jsp
-      
+  datasource:
+    url: jdbc:mysql://localhost:3306/nv?characterEncoding=utf8
+    username: nowij
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    
+# mybatis
+mybatis:
+  mapper-locations: com.nowij.nv.mapper/*.xml
+#  type-aliases-package: com.nowij.nv.dao/NvdbDao
+
 # 색상표
-colors:
- HD:
-  mainClr: 50B748
-  subClr: 00287A
- EX:
-  mainClr: 1f358b
-  subClr: 빨간색
- IBK:
-  mainClr: 0099da
-  subClr: 주황색
- GS:
-  mainClr: 00718F
-  subClr: BBBDC0
- HG:
-  mainClr: ec008c
-  subClr: 351b6f
- KGC:
-  mainClr: qwe
-  subClr: qwe
- PP:
-  mainClr: df0024
-  subClr: asd
+team:
+ colors:
+   HD:
+     mainClr: 50B748
+     subClr: 00287A
+   EX:
+     mainClr: 1f358b
+     subClr: 빨간색
+   IBK:
+     mainClr: 0099da
+     subClr: 주황색
+   GS:
+     mainClr: 00718F
+     subClr: BBBDC0
+   HG:
+     mainClr: ec008c
+     subClr: 351b6f
+   KGC:
+     mainClr: qwe
+     subClr: qwe
+   PP:
+     mainClr: df0024
+     subClr: asd
    
-#config 분리 (producer/consumer)
+# config 분리 (producer/consumer)
 agent:
- type: producer
+  type: producer

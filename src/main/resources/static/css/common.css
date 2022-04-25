@@ -16,6 +16,9 @@ body {
 	border-top-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	margin-right:20px;
+	height:70%;
+	width:50px;
 }
 
 .header {
