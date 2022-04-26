@@ -18,9 +18,8 @@ spring:
     
 # mybatis
 mybatis:
-  mapper-locations: com.nowij.nv.mapper/*.xml
-#  type-aliases-package: com.nowij.nv.dao/NvdbDao
-
+  config-location: /WEB-INF/mybatis/mybatis-config.xml
+  
 # 색상표
 team:
  colors:

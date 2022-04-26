@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nowij.nv.service.NvColorService;
 import com.nowij.nv.vo.NvColorVO;
+import com.nowij.nv.vo.NvScheduleVO;
 
 @Controller
 public class NvController {
@@ -41,7 +42,8 @@ public class NvController {
 	}
 	
 	@RequestMapping("/adminDetail.do")
-	public String adminDetail(String option) {
+	public String adminDetail(NvScheduleVO vo, Model model) {
+		model.addAttribute("vo", vo);
 		return "adminDtl";
 	}
 }
