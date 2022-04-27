@@ -91,7 +91,7 @@ function showPopup(option) {
 function doSave(option) {
 	const id = $('#scdlIdInp').val();
 	const cron = $('#scdlCronInp').val();
-	const no = parseInt($('#scdlNoInp').val());
+	const no = parseInt($('#scdlNoInp').text());
 		
 	$.ajax({
 		url: '/scheduleChange.do',
@@ -104,8 +104,11 @@ function doSave(option) {
 		},
 		success: function(data) {
 			if (data == 1) {
-				alert('성공');
+				alert('저장했습니다!');
 				doClose();
+				$('#grid').datagrid('reload');
+			} else{
+				alert("저장 실패했습니다!");
 			}
 		}
 	});

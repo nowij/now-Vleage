@@ -4,6 +4,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"></setting>
+		<setting name="autoMappingBehavior" value="PARTIAL"></setting> <!-- mybatis가 컬럼을 필드/프로퍼티에 자동으로 매핑할지와 방법에 대한 명시(PARTIAL은 중첩되지 않은 것들을 매핑 -->
+	</settings>
+
 	<typeAliases>
 		<typeAlias type="com.nowij.nv.vo.NvScheduleVO" alias="NvScheduleVO"/>
 	</typeAliases>

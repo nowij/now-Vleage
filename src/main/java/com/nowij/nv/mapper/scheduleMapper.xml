@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="scdl">
 
-	<select id="selectSchedule" resultType="java.util.List">
+	<select id="selectSchedule" resultType="java.util.HashMap">
 		SELECT SCDL_ID, SCDL_STTS, SCDL_CRON, SCDL_NO FROM V_ADMIN
 	</select>
 	
@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="insertSchedule" parameterType="NvScheduleVO">
-		INSERT INTO V_ADMIN(SCDL_NO, SCDL_ID, SCDL_CRON, CRET_DATE, SCDL_NO) VALUES(#{scdlId}, #{scdlCron}, SYSDATE(), #{scdlNo});
+		INSERT INTO V_ADMIN(SCDL_NO, SCDL_ID, SCDL_CRON, CRET_DATE) VALUES(#{scdlNo}, #{scdlId}, #{scdlCron}, SYSDATE());
 	</insert>
 	
 	<update id="updateSchedule">
